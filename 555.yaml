@@ -1,0 +1,3742 @@
+openapi: '3.0.0'
+info:
+  title: PrescribeIT SDK REST API
+  version: 5.0.21
+paths:
+  /emr/transform-to-xml/emr-request:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmrRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+  /emr/transform-to-xml/emr-cancel-request:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmrCancelRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+  /emr/transform-to-xml/emr-deferred-request:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmrDeferredRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+  /pms/transform-to-xml/pms-prescribe-request:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PmsPrescribeRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+  /pms/transform-to-xml/pms-adapt-request:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PmsAdaptRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+  /pms/transform-to-xml/pms-renewal-request:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PmsRenewalRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+  /pms/transform-to-xml/pms-dispense-cancel-notification:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PmsDispenseCancelNotification'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+  /pms/transform-to-xml/pms-cancel-response:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PmsCancelResponse'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+  /emr/transform-to-xml/notification-message:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NotificationMessage'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+  /pms/transform-to-xml/notification-message:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NotificationMessage'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+  /pms/transform-to-xml/pms-dispense-notification:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PmsDispenseNotification'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+  /emr/transform-to-xml/clinician-communication:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClinicianCommunication'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+  /pms/transform-to-xml/clinician-communication:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClinicianCommunication'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+  /emr/transform-from-xml/search:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref:  '#/components/schemas/ProviderRegistrySearchResponse'
+  /pms/transform-from-xml/search:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref:  '#/components/schemas/ProviderRegistrySearchResponse'
+  /emr/transform-from-xml/formulary:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref:  '#/components/schemas/Formulary'
+  /emr/transform-from-xml/notification:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref:  '#/components/schemas/NotificationMessageIssue'
+  /pms/transform-from-xml/notification:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref:  '#/components/schemas/NotificationMessageIssue'
+  /emr/transform-to-xml/acknowledgment:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+  /pms/transform-to-xml/acknowledgment:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+  /emr/poll-inbox:
+    get: 
+      responses: 
+        '200':
+          content: 
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+          description: OK
+  /emr/submit-to-inbox: 
+    post: 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses: 
+        '200': 
+          content: 
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+          description: OK
+  /emr/transform-from-xml: 
+    post: 
+      requestBody: 
+        content:
+          application/json:
+            schema: 
+              type: string
+      responses: 
+        '200': 
+          description: OK
+          content: 
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/InboxMessageResponse"
+  /pms/poll-inbox:
+    get: 
+      responses: 
+        '200': 
+          content: 
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+          description: OK
+  /pms/submit-to-inbox: 
+    post: 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses: 
+        '200': 
+          content: 
+            application/json: 
+              schema:
+                $ref: "#/components/schemas/TransportResponse"
+          description: OK
+  /pms/transform-from-xml: 
+    post: 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses: 
+        '200': 
+          content: 
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/InboxMessageResponse"
+          description: OK
+  /emr/acknowledge:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /pms/acknowledge:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /emr/attachment-upload:
+    post:
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                contentType:
+                  type: string
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /pms/attachment-upload:
+    post:
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                contentType:
+                  type: string
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /emr/request-otp:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RequestOtpParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /emr/request-saml-token:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RequestSamlTokenParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+
+  /emr/formulary-request:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FormularyRequestParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /emr/registry-search/organization-by-id:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmrRegistrySearchOrganizationByIdQueryParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /emr/registry-search/organization-discrete:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmrRegistrySearchOrganizationDiscreteQueryParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /emr/registry-search/organization-elastic:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmrRegistrySearchOrganizationElasticQueryParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /emr/registry-search/organization-bulk-by-fax:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PharmacyBulkSearchByFaxParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /emr/registry-search/organization-bulk-by-ids:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PharmacyBulkSearchByIdParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /emr/registry-search/practitioner-by-id:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmrRegistrySearchPractitionerByIdQueryParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /emr/registry-search/practitioner-discrete:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmrRegistrySearchPractitionerDiscreteQueryParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /emr/registry-search/practitioner-elastic:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmrRegistrySearchPractitionerElasticQueryParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /pms/receive-deferred:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PmsDeferredQueryParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /pms/acknowledge-deferred:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AcknowledgeDeferredParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /pms/registry-search/organization-by-id:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrganizationIdSearchParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /pms/registry-search/organization-discrete:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrganizationSearchParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /pms/registry-search/organization-elastic:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrganizationElasticSearchParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /pms/registry-search/practitioner-by-id:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PractitionerIdSearchParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /pms/registry-search/search-practitioner-discrete:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PractitionerSearchParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+  /pms/registry-search/search-practitioner-elastic:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PractitionerElasticSearchParameters'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/TransportResponse"
+components:
+  schemas:
+    EmrRequest:
+      allOf:
+      - $ref: '#/components/schemas/BaseBundle'
+      - type: object
+        properties:
+          source:
+            $ref: '#/components/schemas/Organization'
+          destination:
+            $ref: '#/components/schemas/Organization'
+          patientInfo:
+            $ref: '#/components/schemas/PatientInfo'
+          practitioner:
+            $ref: '#/components/schemas/Practitioner'
+          newRequests:
+            type: array
+            items:
+              $ref: '#/components/schemas/MedicationOrder'
+          renewalRequests:
+            type: array
+            items:
+              $ref: '#/components/schemas/MedicationOrder'
+          renewalResponses:
+            type: array
+            items:
+              $ref: '#/components/schemas/RenewResponseMedicationOrder'
+          groupId:
+            $ref: '#/components/schemas/Identifier'
+        required: [source, destination, patientInfo, practitioner]
+    EmrCancelRequest:
+      allOf:
+      - $ref: '#/components/schemas/BaseBundle'
+      - type: object
+        properties:
+          source:
+            $ref: '#/components/schemas/Organization'
+          destination:
+            $ref: '#/components/schemas/Organization'
+          patientInfo:
+            $ref: '#/components/schemas/PatientInfo'
+          practitioner:
+            $ref: '#/components/schemas/Practitioner'
+          cancelRequests:
+            type: array
+            items:
+              $ref: '#/components/schemas/CancelMedicationOrder'
+          groupId:
+            $ref: '#/components/schemas/Identifier'
+        required: [source, destination, patientInfo, practitioner, cancelRequests]
+    EmrDeferredRequest:
+      allOf:
+      - $ref: '#/components/schemas/BaseBundle'
+      - type: object
+        properties:
+          source:
+            $ref: '#/components/schemas/Organization'
+          patientInfo:
+            $ref: '#/components/schemas/PatientInfo'
+          practitioner:
+            $ref: '#/components/schemas/Practitioner'
+          deferredRequests:
+            type: array
+            items:
+              $ref: '#/components/schemas/MedicationOrder'
+          groupId:
+            $ref: '#/components/schemas/Identifier'
+        required: [source, patientInfo, practitioner, deferredRequests]
+    PmsPrescribeRequest:
+      allOf:
+      - $ref: '#/components/schemas/BaseBundle'
+      - type: object
+        properties:
+          source:
+            $ref: '#/components/schemas/Organization'
+          destination:
+            $ref: '#/components/schemas/Organization'
+          patientInfo:
+            $ref: '#/components/schemas/PatientInfo'
+          practitioner:
+            $ref: '#/components/schemas/Practitioner'
+          pharmacist:
+            $ref: '#/components/schemas/Practitioner'
+          pharmacyMedicationOrder:
+            $ref: '#/components/schemas/PharmacyMedicationOrder'
+          groupId:
+            $ref: '#/components/schemas/Identifier'
+        required: [source, destination, patientInfo, practitioner, pharmacist, pharmacyMedicationOrder]
+    PmsAdaptRequest:
+      allOf:
+      - $ref: '#/components/schemas/BaseBundle'
+      - type: object
+        properties:
+          source:
+            $ref: '#/components/schemas/Organization'
+          destination:
+            $ref: '#/components/schemas/Organization'
+          patientInfo:
+            $ref: '#/components/schemas/PatientInfo'
+          practitioner:
+            $ref: '#/components/schemas/Practitioner'
+          pharmacist:
+            $ref: '#/components/schemas/Practitioner'
+          adaptOrder:
+            $ref: '#/components/schemas/AdaptMedicationOrder'
+          groupId:
+            $ref: '#/components/schemas/Identifier'
+        required: [source, destination, patientInfo, practitioner, pharmacist, adaptOrder]
+    PmsRenewalRequest:
+      allOf:
+      - $ref: '#/components/schemas/BaseBundle'
+      - type: object
+        properties:
+          source:
+            $ref: '#/components/schemas/Organization'
+          destination:
+            $ref: '#/components/schemas/Organization'
+          patientInfo:
+            $ref: '#/components/schemas/PatientInfo'
+          practitioner:
+            $ref: '#/components/schemas/Practitioner'
+          notesToPrescriber:
+            type: array
+            items:
+              type: string
+          renewalRequests:
+            type: array
+            items:
+              $ref: '#/components/schemas/RenewRequestMedicationOrder'
+          groupId:
+            $ref: '#/components/schemas/Identifier'
+        required: [source, destination, patientInfo, practitioner, renewalRequests]
+    PmsDispenseCancelNotification:
+      allOf:
+      - $ref: '#/components/schemas/BaseBundle'
+      - type: object
+        properties:
+          source:
+            $ref: '#/components/schemas/Organization'
+          destination:
+            $ref: '#/components/schemas/Organization'
+          patient:
+            $ref: '#/components/schemas/Patient'
+          practitioner:
+            $ref: '#/components/schemas/Practitioner'
+          cancelledDispenses:
+            type: array
+            items:
+              $ref: '#/components/schemas/CancelMedicationDispense'
+          groupId:
+            $ref: '#/components/schemas/Identifier'
+        required: [source, destination, patient, practitioner, cancelledDispenses]
+    PmsCancelResponse:
+      allOf:
+      - $ref: '#/components/schemas/BaseBundle'
+      - type: object
+        properties:
+          source:
+            $ref: '#/components/schemas/Organization'
+          destination:
+            $ref: '#/components/schemas/Organization'
+          patient:
+            $ref: '#/components/schemas/Patient'
+          practitioner:
+            $ref: '#/components/schemas/Practitioner'
+          cancelResponses:
+            type: array
+            items:
+              $ref: '#/components/schemas/CancelMedicationOrderReference'
+          groupId:
+            $ref: '#/components/schemas/Identifier'
+        required: [source, destination, patient, practitioner, cancelResponses]
+    NotificationMessage:
+      allOf:
+      - $ref: '#/components/schemas/BaseBundle'
+      - type: object
+        properties:
+          originalMessageId:
+            type: string
+          messageType:
+            $ref: '#/components/schemas/NotificationMessageType'
+          sourceReference:
+            type: string
+          destinationReference:
+            type: string
+          issueList:
+            type: array
+            items:
+              $ref: '#/components/schemas/NotificationMessageIssue'
+          faxMedia:
+            $ref: '#/components/schemas/NotificationMessageFaxMedia'
+        required: [originalMessageId, messageType, sourceReference, destinationReference, issueList]
+    PmsDispenseNotification:
+      allOf:
+      - $ref: '#/components/schemas/BaseBundle'
+      - type: object
+        properties:
+          source:
+            $ref: '#/components/schemas/Organization'
+          destination:
+            $ref: '#/components/schemas/Organization'
+          patient:
+            $ref: '#/components/schemas/Patient'
+          practitioner:
+            $ref: '#/components/schemas/Practitioner'
+          medicationDispenses:
+            type: array
+            items:
+              $ref: '#/components/schemas/MedicationDispenseTask'
+          groupId:
+            $ref: '#/components/schemas/Identifier'
+        required: [source, destination, patient, practitioner, medicationDispenses]
+    ClinicianCommunication:
+      allOf:
+      - $ref: '#/components/schemas/BaseBundle'
+      - type: object
+        properties:
+          sender:
+            $ref: '#/components/schemas/CommunicationEntity'
+          recipient:
+            $ref: '#/components/schemas/CommunicationEntity'
+          practitionerOrganization:
+            $ref: '#/components/schemas/Organization'
+          subject:
+            type: string
+          messageBody:
+            type: string
+          threadId:
+            type: string
+          enteredBy:
+            $ref: '#/components/schemas/NonClinicianPractitioner'
+          attachments:
+            type: array
+            items:
+              $ref: '#/components/schemas/CommunicationAttachment'
+          patient:
+            $ref: '#/components/schemas/Patient'
+          sent:
+            $ref: '#/components/schemas/DateTimeWithPrecision'
+          status:
+            $ref: '#/components/schemas/CommunicationStatusHolder'
+          category:
+            $ref: '#/components/schemas/CommunicationCategoryHolder'
+          priority:
+            $ref: '#/components/schemas/CommunicationPriorityHolder'
+          topicId:
+            $ref: '#/components/schemas/Identifier'
+          topicGroupId:
+            $ref: '#/components/schemas/Identifier'
+        required: [sender, recipient, practitionerOrganization, threadId, status, category]
+    LocumPractitioner:
+      allOf:
+      - $ref: '#/components/schemas/CommunicationEntity'
+      - type: object
+        properties:
+          actingOnBehalfOf:
+            $ref: '#/components/schemas/Practitioner'
+          licenseNumber:
+            $ref: '#/components/schemas/PractitionerLicense'
+          contactList:
+            type: array
+            items:
+              $ref: '#/components/schemas/ContactInfo'
+          firstName:
+            type: string
+          middleName:
+            type: string
+          lastName:
+            type: string
+          namePrefix:
+            type: string
+          nameSuffix:
+            type: string
+        required: [actingOnBehalfOf, licenseNumber, firstName, lastName]
+    EmrFormularyRequestQuery:
+      type: object
+      properties:
+        jurisdiction:
+          $ref: '#/components/schemas/CanadianJurisdictionHolder'
+        codeSystem:
+          $ref: '#/components/schemas/MedicationCoding'
+        representativeDin:
+          type: boolean
+      required: [jurisdiction, codeSystem]
+    OrganizationElasticSearchParameters:
+      type: object
+      properties:
+        role:
+          $ref: '#/components/schemas/SharedOrganizationTypeHolder'
+        addressStateExact:
+          $ref: '#/components/schemas/CanadianJurisdictionHolder'
+        searchString:
+          type: string
+        attributeSet:
+          $ref: '#/components/schemas/OrganizationElasticSearchParametersAttributeSet'
+        entityServiceCode:
+          $ref: '#/components/schemas/SharedServiceTypeHolder'
+        includeAllPractitioners:
+          type: boolean
+      required: [role, addressStateExact, searchString, attributeSet]
+    OrganizationSearchParameters:
+      type: object
+      properties:
+        role:
+          $ref: '#/components/schemas/SharedOrganizationTypeHolder'
+        addressStateExact:
+          $ref: '#/components/schemas/CanadianJurisdictionHolder'
+        addressCity:
+          type: string
+        addressCityExact:
+          type: boolean
+        addressLine:
+          type: string
+        addressLineExact:
+          type: boolean
+        addressPostalCode:
+          type: string
+        name:
+          type: string
+        nameContains:
+          type: boolean
+        faxExact:
+          type: string
+        phoneExact:
+          type: string
+        includeAllPractitioners:
+          type: boolean
+      required: [role, addressStateExact]
+    PractitionerElasticSearchParameters:
+      type: object
+      properties:
+        orgAddressStateExact:
+          $ref: '#/components/schemas/CanadianJurisdictionHolder'
+        searchString:
+          type: string
+        attributeSet:
+          $ref: '#/components/schemas/PractitionerElasticSearchParametersAttributeSet'
+        entityServiceCode:
+          $ref: '#/components/schemas/SharedServiceTypeHolder'
+        includeAllOrganizations:
+          type: boolean
+      required: [orgAddressStateExact, searchString, attributeSet]
+    PractitionerSearchParameters:
+      type: object
+      properties:
+        orgAddressStateExact:
+          $ref: '#/components/schemas/CanadianJurisdictionHolder'
+        orgAddressCity:
+          type: string
+        orgAddressCityExact:
+          type: boolean
+        orgAddressLine:
+          type: string
+        orgAddressLineExact:
+          type: boolean
+        orgAddressPostalCode:
+          type: string
+        nameFamily:
+          type: string
+        nameFamilyContains:
+          type: boolean
+        nameGiven:
+          type: string
+        phoneExact:
+          type: string
+        includeAllOrganizations:
+          type: boolean
+        role:
+          $ref: '#/components/schemas/SharedPractitionerRoleHolder'
+        specialty:
+          type: string
+        licenseExact:
+          type: string
+      required: [orgAddressStateExact]
+    PharmacyBulkSearchByFaxParameters:
+      type: object
+      properties:
+        faxNumbers:
+          type: array
+          items:
+            type: string
+      required: [faxNumbers]
+    PharmacyBulkSearchByIdParameters:
+      type: object
+      properties:
+        registryIdentifiers:
+          type: array
+          items:
+            type: string
+        lastUpdated:
+          type: string
+          format: date-time
+      required: [registryIdentifiers]
+    PractitionerIdSearchParameters:
+      type: object
+      properties:
+        registryIdentifier:
+          type: string
+        practitionerLicenseNumber:
+          $ref: '#/components/schemas/PractitionerLicense'
+        includeAllOrganizations:
+          type: boolean
+    OrganizationIdSearchParameters:
+      type: object
+      properties:
+        registryIdentifier:
+          type: string
+        includeAllPractitioners:
+          type: boolean
+      required: [registryIdentifier]
+    PmsDeferredPrescriptionQuery:
+      type: object
+      properties:
+        messageKey:
+          type: string
+        lastName:
+          type: string
+        birthDate:
+          type: string
+          format: date
+          nullable: true
+      required: [messageKey]
+    PractitionerToAuthenticate:
+      type: object
+      properties:
+        id:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        license:
+          type: string
+        localUserId:
+          type: string
+        licenseIssuer:
+          type: string
+        roleCode:
+          type: string
+    Person:
+      type: object
+      properties:
+        firstName:
+          type: string
+        middleName:
+          type: string
+        lastName:
+          type: string
+        namePrefix:
+          type: string
+        nameSuffix:
+          type: string
+      required: [firstName, lastName]
+    Formulary:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+        id:
+          type: string
+    ProviderRegistrySearchResponse:
+      type: object
+      properties:
+        totalSearchResults:
+          type: integer
+          format: int32
+        selfUrl:
+          type: string
+        organizations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Organization'
+        practitioners:
+          type: array
+          items:
+            $ref: '#/components/schemas/Practitioner'
+        id:
+          type: string
+    BaseBundle:
+      type: object
+      properties:
+        bundleId:
+          type: string
+        bundleFullUrl:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        id:
+          type: string
+        type:
+          type: string
+      discriminator:
+        propertyName: type
+      required: [type]
+    Organization:
+      allOf:
+      - $ref: '#/components/schemas/CommunicationEntity'
+      - type: object
+        properties:
+          name:
+            type: string
+          organizationType:
+            $ref: '#/components/schemas/SharedOrganizationTypeHolder'
+          contactList:
+            type: array
+            items:
+              $ref: '#/components/schemas/ContactInfo'
+          address:
+            $ref: '#/components/schemas/Address'
+          servicesOffered:
+            type: array
+            items:
+              $ref: '#/components/schemas/CommunicationService'
+          parentOrganization:
+            $ref: '#/components/schemas/OrganizationParentReference'
+          lastUpdated:
+            type: string
+            format: date-time
+        required: [name, contactList, address]
+    PatientInfo:
+      type: object
+      properties:
+        patient:
+          $ref: '#/components/schemas/Patient'
+        allergies:
+          type: array
+          items:
+            type: string
+        observation:
+          $ref: '#/components/schemas/Observation'
+      required: [patient]
+    Practitioner:
+      allOf:
+      - $ref: '#/components/schemas/CommunicationEntity'
+      - type: object
+        properties:
+          token:
+            type: string
+          communication:
+            type: array
+            items:
+              $ref: '#/components/schemas/SharedCommunicationLanguageHolder'
+          licenseNumber:
+            $ref: '#/components/schemas/PractitionerLicense'
+          contactList:
+            type: array
+            items:
+              $ref: '#/components/schemas/ContactInfo'
+          role:
+            $ref: '#/components/schemas/SharedPractitionerRoleHolder'
+          specialty:
+            type: array
+            items:
+              $ref: '#/components/schemas/PractitionerSpecialtyHolder'
+          servicesOffered:
+            type: array
+            items:
+              $ref: '#/components/schemas/CommunicationService'
+          organizations:
+            type: array
+            items:
+              $ref: '#/components/schemas/Organization'
+          firstName:
+            type: string
+          middleName:
+            type: string
+          lastName:
+            type: string
+          namePrefix:
+            type: string
+          nameSuffix:
+            type: string
+        required: [communication, licenseNumber, firstName, lastName]
+    MedicationOrder:
+      allOf:
+      - $ref: '#/components/schemas/BaseMedicationOrder'
+      - type: object
+    BaseMedicationOrder:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/Identifier'
+        dosageInstructions:
+          type: array
+          items:
+            $ref: '#/components/schemas/DosageInstruction'
+        dispenseRequest:
+          $ref: '#/components/schemas/MedicationOrderDispenseRequest'
+        medicationInfo:
+          $ref: '#/components/schemas/MedicationInfo'
+        renderedDosageInstruction:
+          type: string
+        disIds:
+          type: array
+          items:
+            type: string
+        treatmentType:
+          $ref: '#/components/schemas/PrescriptionTreatmentCategoryHolder'
+        category:
+          $ref: '#/components/schemas/PrescriptionTypeHolder'
+        detectedIssues:
+          type: array
+          items:
+            $ref: '#/components/schemas/DetectedIssue'
+        pharmacyInstructions:
+          type: string
+        over25dur:
+          type: boolean
+          nullable: true
+        monitoredDrug:
+          type: boolean
+          nullable: true
+        noRenewals:
+          type: boolean
+          nullable: true
+        reasonCodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrescriptionIndicationForUseHolder'
+        note:
+          type: string
+        dateWritten:
+          $ref: '#/components/schemas/DateTimeWithPrecision'
+        isHighPriority:
+          type: boolean
+          nullable: true
+        doNotAutofill:
+          type: boolean
+          nullable: true
+        taskId:
+          type: string
+        priorPrescriptionId:
+          $ref: '#/components/schemas/Identifier'
+        type:
+          type: string
+      discriminator:
+        propertyName: type
+      required: [id, dispenseRequest, medicationInfo, renderedDosageInstruction, dateWritten, type]
+    RenewResponseMedicationOrder:
+      allOf:
+      - $ref: '#/components/schemas/BaseMedicationOrder'
+      - type: object
+        properties:
+          basedOnTaskId:
+            type: string
+          basedOnMultipleResponse:
+            type: boolean
+            nullable: true
+          status:
+            $ref: '#/components/schemas/RenewResponseMedicationOrderStatus'
+        required: [basedOnTaskId, status]
+    Identifier:
+      type: object
+      properties:
+        system:
+          type: string
+        id:
+          type: string
+      required: [system, id]
+    CancelMedicationOrder:
+      allOf:
+      - $ref: '#/components/schemas/BaseMedicationOrder'
+      - type: object
+        properties:
+          cancelReason:
+            $ref: '#/components/schemas/PrescriptionCancelReasonHolder'
+          cancelReasonDescription:
+            type: string
+          originalPrescriber:
+            $ref: '#/components/schemas/Practitioner'
+        required: [cancelReason, originalPrescriber]
+    PharmacyMedicationOrder:
+      allOf:
+      - $ref: '#/components/schemas/BaseMedicationOrder'
+      - type: object
+        properties:
+          prescribeReason:
+            type: string
+        required: [prescribeReason]
+    AdaptMedicationOrder:
+      allOf:
+      - $ref: '#/components/schemas/BaseMedicationOrder'
+      - type: object
+        properties:
+          adaptReason:
+            type: string
+          originalOrderId:
+            $ref: '#/components/schemas/Identifier'
+          stopNotification:
+            type: boolean
+            nullable: true
+        required: [adaptReason, originalOrderId]
+    RenewRequestMedicationOrder:
+      allOf:
+      - $ref: '#/components/schemas/BaseMedicationOrder'
+      - type: object
+        properties:
+          changesToOrder:
+            type: string
+          daysSinceLastDispense:
+            type: integer
+            format: int32
+            nullable: true
+          medicationDispense:
+            $ref: '#/components/schemas/MedicationDispense'
+          requestedPrescriptionReference:
+            type: array
+            items:
+              $ref: '#/components/schemas/PmsRxDispenseMedicationOrder'
+          infoPrescriptionReference:
+            type: array
+            items:
+              $ref: '#/components/schemas/PmsRxDispenseMedicationOrder'
+          splitPrescription:
+            $ref: '#/components/schemas/SplitPrescription'
+          originalPrescriber:
+            $ref: '#/components/schemas/Practitioner'
+        required: [originalPrescriber]
+    Patient:
+      type: object
+      properties:
+        birthDate:
+          $ref: '#/components/schemas/DateWithPrecision'
+        gender:
+          $ref: '#/components/schemas/GenderHolder'
+        address:
+          $ref: '#/components/schemas/Address'
+        localPatientIdentifier:
+          $ref: '#/components/schemas/Identifier'
+        jurisdictionalHealthNumber:
+          $ref: '#/components/schemas/PatientHealthNumber'
+        phones:
+          type: array
+          items:
+            $ref: '#/components/schemas/PatientContactInfo'
+        otherNames:
+          type: array
+          items:
+            $ref: '#/components/schemas/Name'
+        firstName:
+          type: string
+        middleName:
+          type: string
+        lastName:
+          type: string
+        namePrefix:
+          type: string
+        nameSuffix:
+          type: string
+      required: [birthDate, gender, localPatientIdentifier, firstName, lastName]
+    CancelMedicationDispense:
+      type: object
+      properties:
+        cancelReason:
+          type: string
+        medicationDispense:
+          $ref: '#/components/schemas/MedicationDispenseTask'
+      required: [cancelReason, medicationDispense]
+    CancelMedicationOrderReference:
+      type: object
+      properties:
+        basedOnTaskId:
+          type: string
+        medicationOrderId:
+          $ref: '#/components/schemas/Identifier'
+        disNotification:
+          type: boolean
+          nullable: true
+        status:
+          $ref: '#/components/schemas/CancelMedicationOrderReferenceStatus'
+      required: [basedOnTaskId, medicationOrderId, status]
+    NotificationMessageType:
+      type: string
+      enum:
+      - TYPE_901
+      - TYPE_997
+      - TYPE_998
+      - TYPE_999
+    NotificationMessageIssue:
+      type: object
+      properties:
+        referenceNumber:
+          type: string
+        message:
+          type: string
+        translatedMessage:
+          type: string
+        severity:
+          $ref: '#/components/schemas/IssueSeverityHolder'
+        detailCode:
+          $ref: '#/components/schemas/IssueTypeHolder'
+        detailMessage:
+          type: string
+        translatedDetailMessage:
+          type: string
+        diagnosticMessage:
+          type: string
+      required: [severity, detailCode, detailMessage]
+    NotificationMessageFaxMedia:
+      type: object
+      properties:
+        contentType:
+          type: string
+        url:
+          type: string
+      required: [contentType, url]
+    MedicationDispenseTask:
+      type: object
+      properties:
+        dispense:
+          $ref: '#/components/schemas/MedicationDispense'
+        splitPharmacyRxId:
+          $ref: '#/components/schemas/Identifier'
+        splitPrescription:
+          $ref: '#/components/schemas/SplitPrescription'
+      required: [dispense]
+    CommunicationEntity:
+      type: object
+      properties:
+        id:
+          type: string
+        entityType:
+          type: string
+      discriminator:
+        propertyName: entityType
+      required: [entityType]
+    NonClinicianPractitioner:
+      type: object
+      properties:
+        role:
+          type: string
+        contactList:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactInfo'
+        firstName:
+          type: string
+        middleName:
+          type: string
+        lastName:
+          type: string
+        namePrefix:
+          type: string
+        nameSuffix:
+          type: string
+      required: [role, firstName, lastName]
+    CommunicationAttachment:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        contentType:
+          $ref: '#/components/schemas/AttachmentTypeHolder'
+        size:
+          type: integer
+          format: int32
+      required: [contentType]
+    DateTimeWithPrecision:
+      type: object
+      properties:
+        precision:
+          $ref: '#/components/schemas/DateTimeWithPrecisionPrecision'
+        dateTime:
+          type: string
+          format: date-time
+      required: [precision, dateTime]
+    CommunicationStatusEnum:
+      type: string
+      enum:
+      - "COMPLETED"
+      - "IN_PROGRESS"
+    CommunicationStatusHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/CommunicationStatusEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/CommunicationStatus'
+
+    CommunicationStatus:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    CommunicationCategoryEnum:
+      type: string
+      enum:
+      - "CLARIFICATION"
+      - "CONSULTATION"
+      - "FOLLOW_UP"
+      - "GENERAL"
+    CommunicationCategoryHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/CommunicationCategoryEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/CommunicationCategory'
+
+    CommunicationCategory:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    CommunicationPriorityEnum:
+      type: string
+      enum:
+      - "HIGH"
+      - "NORMAL"
+    CommunicationPriorityHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/CommunicationPriorityEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/CommunicationPriority'
+
+    CommunicationPriority:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    PractitionerLicense:
+      type: object
+      properties:
+        issuer:
+          $ref: '#/components/schemas/SharedPractitionerIdentifierTypeHolder'
+        number:
+          type: string
+      required: [issuer, number]
+    ContactInfo:
+      type: object
+      properties:
+        use:
+          $ref: '#/components/schemas/SharedContactPointUseHolder'
+        type:
+          $ref: '#/components/schemas/SharedContactPointSystemHolder'
+        value:
+          type: string
+        confidential:
+          type: boolean
+          nullable: true
+      required: [use, type, value]
+    CanadianJurisdictionEnum:
+      type: string
+      enum:
+      - "AB"
+      - "BC"
+      - "MB"
+      - "NB"
+      - "NL"
+      - "NS"
+      - "NT"
+      - "NU"
+      - "ON"
+      - "PE"
+      - "QC"
+      - "SK"
+      - "YT"
+    CanadianJurisdictionHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/CanadianJurisdictionEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/CanadianJurisdiction'
+
+    CanadianJurisdiction:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    MedicationCoding:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+      required: [code, system]
+    SharedOrganizationTypeEnum:
+      type: string
+      enum:
+      - "Pharmacy"
+      - "Clinic"
+    SharedOrganizationTypeHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/SharedOrganizationTypeEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/SharedOrganizationType'
+
+    SharedOrganizationType:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    OrganizationElasticSearchParametersAttributeSet:
+      type: string
+      enum:
+      - SET1
+      - SET2
+    SharedServiceTypeEnum:
+      type: string
+      enum:
+      - "CLINICIAN_COMM"
+      - "MEDDIALOG_PERSON_ORG"
+      - "MEDIALOG_ORG"
+      - "PRESCRIBEIT_RX"
+    SharedServiceTypeHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/SharedServiceTypeEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/SharedServiceType'
+
+    SharedServiceType:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    PractitionerElasticSearchParametersAttributeSet:
+      type: string
+      enum:
+      - SET1
+      - SET2
+    SharedPractitionerRoleEnum:
+      type: string
+      enum:
+      - "CHIROPODIST"
+      - "CHIROPRACTOR"
+      - "DENTALHYGIENIST"
+      - "DENTIST"
+      - "DIETICIAN"
+      - "DOCTOR"
+      - "MIDWIFE"
+      - "NURSE"
+      - "NURSEPRACTITIONER"
+      - "OPTOMETRIST"
+      - "PHARMACIST"
+      - "PODIATRIST"
+    SharedPractitionerRoleHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/SharedPractitionerRoleEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/SharedPractitionerRole'
+
+    SharedPractitionerRole:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    Product:
+      type: object
+      properties:
+        code:
+          type: string
+        name:
+          type: string
+        coverageCode:
+          type: string
+        costSymbol:
+          type: string
+        unitCost:
+          type: number
+          nullable: true
+        costRange:
+          type: string
+        costUnit:
+          type: string
+        manufacturerProductUrl:
+          type: string
+        conditionalCoverageUrl:
+          type: string
+    Address:
+      type: object
+      properties:
+        street:
+          type: string
+        street2:
+          type: string
+        city:
+          type: string
+        postalCode:
+          type: string
+        province:
+          $ref: '#/components/schemas/CanadianJurisdictionHolder'
+        country:
+          type: string
+        addressType:
+          $ref: '#/components/schemas/AddressTypeHolder'
+    CommunicationService:
+      type: object
+      properties:
+        code:
+          $ref: '#/components/schemas/SharedServiceTypeHolder'
+        status:
+          $ref: '#/components/schemas/SharedServiceStatusHolder'
+    OrganizationParentReference:
+      type: object
+      properties:
+        id:
+          type: string
+        display:
+          type: string
+    Observation:
+      type: object
+      properties:
+        bodyHeight:
+          $ref: '#/components/schemas/ObservationValue'
+        bodyWeight:
+          $ref: '#/components/schemas/ObservationValue'
+    SharedCommunicationLanguageEnum:
+      type: string
+      enum:
+      - "EN_CA"
+      - "FR_CA"
+    SharedCommunicationLanguageHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/SharedCommunicationLanguageEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/SharedCommunicationLanguage'
+
+    SharedCommunicationLanguage:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    PractitionerSpecialtyHolder:
+      type: object
+      properties:
+        overriddenBinding:
+          $ref: '#/components/schemas/PractitionerSpecialty'
+
+    PractitionerSpecialty:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+      required: [displayEn]
+    DosageInstruction:
+      type: object
+      properties:
+        instruction:
+          type: string
+        additionalInstructions:
+          type: string
+        timing:
+          $ref: '#/components/schemas/Timing'
+        asNeeded:
+          type: boolean
+          nullable: true
+        site:
+          $ref: '#/components/schemas/PrescriptionAdministrationSiteHolder'
+        route:
+          $ref: '#/components/schemas/PrescriptionRouteOfAdministrationHolder'
+        dose:
+          $ref: '#/components/schemas/DoseType'
+        rate:
+          $ref: '#/components/schemas/Ratio'
+        maxDosePerPeriod:
+          $ref: '#/components/schemas/Ratio'
+        instructionRelationship:
+          $ref: '#/components/schemas/PrescriptionDosageInstructionLineRelationshipHolder'
+    MedicationOrderDispenseRequest:
+      type: object
+      properties:
+        dispenseIntervalDays:
+          type: number
+          nullable: true
+        trialEligibility:
+          type: boolean
+          nullable: true
+        fillInstruction:
+          $ref: '#/components/schemas/FirstFillInstruction'
+        maxDispense:
+          $ref: '#/components/schemas/Quantity'
+        totalPrescribedQuantity:
+          $ref: '#/components/schemas/Quantity'
+        totalDaysSupply:
+          type: number
+          nullable: true
+        validityPeriod:
+          $ref: '#/components/schemas/Period'
+        numberOfRepeatsAllowed:
+          type: integer
+          format: int32
+          nullable: true
+        quantity:
+          $ref: '#/components/schemas/Quantity'
+        expectedSupplyDurationDays:
+          type: number
+          nullable: true
+      required: [validityPeriod]
+    MedicationInfo:
+      type: object
+      properties:
+        code:
+          $ref: '#/components/schemas/MedicationPrescribeCoding'
+        description:
+          type: string
+        drugForm:
+          $ref: '#/components/schemas/PrescriptionDrugFormHolder'
+        medicationStrengthDescription:
+          type: string
+      required: [description]
+    PrescriptionTreatmentCategoryEnum:
+      type: string
+      enum:
+      - "ACU"
+      - "CHRON"
+    PrescriptionTreatmentCategoryHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/PrescriptionTreatmentCategoryEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/PrescriptionTreatmentCategory'
+
+    PrescriptionTreatmentCategory:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    PrescriptionTypeEnum:
+      type: string
+      enum:
+      - "COMPOUND"
+      - "DEVICE"
+      - "MEDICATION"
+      - "NATURAL"
+      - "NUTRITIONAL"
+    PrescriptionTypeHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/PrescriptionTypeEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/PrescriptionType'
+
+    PrescriptionType:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    DetectedIssue:
+      type: object
+      properties:
+        category:
+          $ref: '#/components/schemas/DetectedIssueCategoryHolder'
+        detail:
+          type: string
+        mitigationActions:
+          type: array
+          items:
+            $ref: '#/components/schemas/DetectedIssueMitigationActionHolder'
+    PrescriptionIndicationForUseEnum:
+      type: string
+      enum:
+      - "ABNORMAL_MOVEMENT"
+      - "ACUTE_BRONCHITIS"
+      - "ACUTE_PAIN"
+      - "ACUTE_UPPER_RESPIRATORY_INFECTION"
+      - "ALLERGIC_RHINITIS"
+      - "ALZHEIMERS_DISEASE"
+      - "ANGINA_PECTORIS"
+      - "ANXIETY_DISORDER"
+      - "ARTERIOSCLEROTIC_VASCULAR_DISEASE"
+      - "ARTHRITIS"
+      - "ASTHMA_WITHOUT_STATUS_ASTHMATICUS"
+      - "ATRIAL_FIBRILLATION"
+      - "BENIGN_HYPERTENSION"
+      - "BIPOLAR_DISORDER"
+      - "CELLULITIS"
+      - "CEREBROVASCULAR_ACCIDENT"
+      - "CHRONIC_INTRACTABLE_PAIN"
+      - "CHRONIC_KIDNEY_DISEASE"
+      - "CHRONIC_OBSTRUCTIVE_LUNG_DISEASE"
+      - "VITAMIN_B12_DEFICIENCY"
+      - "CONGESTIVE_HEART_FAILURE"
+      - "CONSTIPATION"
+      - "CORONARY_ARTERIOSCLEROSIS"
+      - "COUNSELING_ABOUT_TOBACCO_USE"
+      - "CROHNS_DISEASE"
+      - "DEEP_VEIN_PHLEBITIS_AND_THROMBOPHLEBITIS_OF_THE_LEG"
+      - "DEMENTIA"
+      - "DEPRESSIVE_DISORDER"
+      - "DISORDER_OF_LACRIMAL_GLAND"
+      - "DISORDER_OF_PROSTATE"
+      - "DISORDERS_OF_INITIATING_AND_MAINTAINING_SLEEP"
+      - "DUODENAL_ULCER_WITHOUT_HEMORRHAGE_AND_WITHOUT_PERFORATION"
+      - "DYSKINESIA"
+      - "EPILEPSY"
+      - "EXCESSIVE_SEXUAL_DRIVE"
+      - "GASTROESOPHAGEAL_REFLUX_DISEASE_WITHOUT_ESOPHAGITIS"
+      - "GENERALIZED_ANXIETY_DISORDER"
+      - "GESTATIONAL_DIABETES_MELLITUS"
+      - "GLAUCOMA"
+      - "HEARTBURN"
+      - "HEMORRHOIDS"
+      - "HERPES_ZOSTER_WITHOUT_COMPLICATION"
+      - "HYPERLIPIDEMIA"
+      - "HYPERTENSIVE_HEART_DISEASE"
+      - "HYPOKALEMIA"
+      - "HYPOTHYROIDISM"
+      - "INFLAMMATORY_NEUROPATHY"
+      - "GOUT"
+      - "INVOLUNTARY_MOVEMENT"
+      - "IRON_DEFICIENCY_ANEMIA"
+      - "IRRITANT_CONTACT_DERMATITIS"
+      - "LONG_TERM_CURRENT_USE_OF_ANTICOAGULANT"
+      - "FOLATE_DEFICIENCY_ANEMIA"
+      - "MIGRAINE_WITH_AURA"
+      - "MIGRAINE_WITHOUT_AURA"
+      - "MINOR_DEPRESSIVE_DISORDER"
+      - "MIXED_ANXIETY_AND_DEPRESSIVE_DISORDER"
+      - "MOOD_DISORDER"
+      - "MYOSITIS"
+      - "NEURALGIA"
+      - "NON_ORGANIC_ENDURING_PERSONALITY_CHANGE"
+      - "NONORGANIC_INSOMNIA"
+      - "OPIOID_DEPENDENCE"
+      - "OPIOID_INDUCED_MOOD_DISORDER_DUE_TO_OPIOID_DEPENDENCE"
+      - "OPIOID_INDUCED_ORGANIC_MENTAL_DISORDER"
+      - "OSTEOARTHRITIS"
+      - "OSTEOPOROSIS"
+      - "PANIC_DISORDER"
+      - "PARKINSONS_DISEASE"
+      - "PERIPHERAL_VASCULAR_DISEASE"
+      - "PERSONALITY_DISORDER"
+      - "POSTMENOPAUSAL_OSTEOPOROSIS"
+      - "GESTATIONAL_HYPERTENSION"
+      - "PREINFARCTION_SYNDROME"
+      - "PURE_HYPERCHOLESTEROLEMIA"
+      - "RECURRENT_DEPRESSION"
+      - "RESTLESSNESS_AND_AGITATION"
+      - "RETINOPATHY"
+      - "RHEUMATOID_ARTHRITIS"
+      - "ROUTINE_ANTENATAL_CARE"
+      - "SCHIZOPHRENIA"
+      - "SMOKING_CESSATION_DRUG_THERAPY"
+      - "SYSTEMIC_LUPUS_ERYTHEMATOSUS"
+      - "TACHYCARDIA"
+      - "DRY_EYE_SYNDROME"
+      - "THROMBOPHLEBITIS_OF_DEEP_VEINS_OF_LOWER_EXTREMITY"
+      - "TYPE_1_DIABETES_MELLITUS_WITHOUT_COMPLICATION"
+      - "TYPE_2_DIABETES_MELLITUS_WITHOUT_COMPLICATION"
+      - "ULCERATIVE_COLITIS"
+      - "URINARY_TRACT_INFECTIOUS_DISEASE"
+      - "VENTRICULAR_FIBRILLATION"
+      - "VITAMIN_B_DEFICIENCY"
+      - "VITAMIN_D_DEFICIENCY"
+      - "VITAMIN_DEFICIENCY"
+      - "WHOOPING_COUGH_LIKE_SYNDROME"
+    PrescriptionIndicationForUseHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/PrescriptionIndicationForUseEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/PrescriptionIndicationForUse'
+
+    PrescriptionIndicationForUse:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+      required: [displayEn]
+    RenewResponseMedicationOrderStatus:
+      type: object
+      properties:
+        type:
+          type: string
+      discriminator:
+        propertyName: type
+      required: [type]
+    PrescriptionCancelReasonEnum:
+      type: string
+      enum:
+      - "ALTD"
+      - "DISCONT"
+      - "DOSECHG"
+      - "EIE"
+      - "MONIT"
+      - "NOREQ"
+      - "RECALL"
+      - "REPLACE"
+      - "REPLACEFIX"
+    PrescriptionCancelReasonHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/PrescriptionCancelReasonEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/PrescriptionCancelReason'
+
+    PrescriptionCancelReason:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    MedicationDispense:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/Identifier'
+        medicationInfo:
+          $ref: '#/components/schemas/MedicationCode'
+        remainingQuantity:
+          $ref: '#/components/schemas/Quantity'
+        renderedDosageInstruction:
+          type: string
+        quantity:
+          $ref: '#/components/schemas/Quantity'
+        daysSupply:
+          type: number
+        whenPrepared:
+          $ref: '#/components/schemas/DateTimeWithPrecision'
+        referenceMedicationOrder:
+          $ref: '#/components/schemas/Identifier'
+        dosageInstructions:
+          type: array
+          items:
+            $ref: '#/components/schemas/DosageInstruction'
+      required: [id, medicationInfo, remainingQuantity, renderedDosageInstruction, quantity, daysSupply, whenPrepared, referenceMedicationOrder]
+    PmsRxDispenseMedicationOrder:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/Identifier'
+        reasonCodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrescriptionIndicationForUseHolder'
+        dateWritten:
+          $ref: '#/components/schemas/DateTimeWithPrecision'
+        dispenseRequest:
+          $ref: '#/components/schemas/PmsRxDispenseMedicationOrderDispenseRequestPmsRx'
+        category:
+          $ref: '#/components/schemas/PrescriptionTypeHolder'
+        dateLastDispense:
+          $ref: '#/components/schemas/DateWithPrecision'
+        pharmacyInstructions:
+          type: string
+        daysSinceLastDispense:
+          type: number
+          nullable: true
+        renderedDosageInstruction:
+          type: string
+        medicationInfo:
+          $ref: '#/components/schemas/MedicationInfo'
+      required: [id, dateWritten, dispenseRequest, renderedDosageInstruction, medicationInfo]
+    SplitPrescription:
+      type: object
+      properties:
+        reason:
+          $ref: '#/components/schemas/PrescriptionSplitReasonHolder'
+        description:
+          type: string
+      required: [reason]
+    DateWithPrecision:
+      type: object
+      properties:
+        precision:
+          $ref: '#/components/schemas/DateWithPrecisionPrecision'
+        date:
+          type: string
+          format: date
+      required: [precision, date]
+    GenderEnum:
+      type: string
+      enum:
+      - "FEMALE"
+      - "MALE"
+      - "OTHER"
+      - "UNKNOWN"
+    GenderHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/GenderEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/Gender'
+
+    Gender:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    PatientHealthNumber:
+      type: object
+      properties:
+        value:
+          type: string
+        versionNumber:
+          type: string
+        identifierType:
+          $ref: '#/components/schemas/SharedPatientJurisdictionalHealthIdentifierTypeHolder'
+      required: [value, identifierType]
+    PatientContactInfo:
+      type: object
+      properties:
+        use:
+          $ref: '#/components/schemas/SharedContactPointUseHolder'
+        value:
+          type: string
+        confidential:
+          type: boolean
+          nullable: true
+      required: [use, value]
+    Name:
+      type: object
+      properties:
+        firstName:
+          type: string
+        middleName:
+          type: string
+        lastName:
+          type: string
+        namePrefix:
+          type: string
+        nameSuffix:
+          type: string
+      required: [firstName, lastName]
+    CancelMedicationOrderReferenceStatus:
+      type: object
+      properties:
+        type:
+          type: string
+      discriminator:
+        propertyName: type
+      required: [type]
+    IssueSeverityEnum:
+      type: string
+      enum:
+      - "ERROR"
+      - "FATAL"
+      - "INFORMATION"
+      - "WARNING"
+    IssueSeverityHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/IssueSeverityEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/IssueSeverity'
+
+    IssueSeverity:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    IssueTypeEnum:
+      type: string
+      enum:
+      - "BUSINESS_RULE"
+      - "CODE_INVALID"
+      - "CONFLICT"
+      - "DUPLICATE"
+      - "EXCEPTION"
+      - "EXPIRED"
+      - "EXTENSION"
+      - "FORBIDDEN"
+      - "INCOMPLETE"
+      - "INFORMATIONAL"
+      - "INVALID"
+      - "INVARIANT"
+      - "LOCK_ERROR"
+      - "LOGIN"
+      - "NO_STORE"
+      - "NOT_FOUND"
+      - "NOT_SUPPORTED"
+      - "PROCESSING"
+      - "REQUIRED"
+      - "SECURITY"
+      - "STRUCTURE"
+      - "SUPPRESSED"
+      - "THROTTLED"
+      - "TIMEOUT"
+      - "TOO_COSTLY"
+      - "TOO_LONG"
+      - "TRANSIENT"
+      - "UNKNOWN"
+      - "VALUE"
+    IssueTypeHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/IssueTypeEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/IssueType'
+
+    IssueType:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    AttachmentTypeEnum:
+      type: string
+      enum:
+      - "APPLICATION_PDF"
+      - "IMAGE_JPEG"
+      - "IMAGE_PNG"
+      - "IMAGE_TIFF"
+      - "TEXT_PLAIN"
+    AttachmentTypeHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/AttachmentTypeEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/AttachmentType'
+
+    AttachmentType:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    DateTimeWithPrecisionPrecision:
+      type: string
+      enum:
+      - YEAR
+      - YEAR_MONTH
+      - DATE
+      - DATETIME
+    SharedPractitionerIdentifierTypeEnum:
+      type: string
+      enum:
+      - "NEW_BRUNSWICK_DENTAL_SOCIETY"
+      - "NEW_BRUNSWICK_ASSOCIATION_OF_OPTOMETRISTS"
+      - "NEW_BRUNSWICK_COLLEGE_OF_PHARMACISTS"
+      - "NURSES_ASSOCIATION_OF_NEW_BRUNSWICK"
+      - "MIDWIVES_ASSOCIATION_OF_NEW_BRUNSWICK"
+      - "NS_COMMUNITY_PHARMACY_LOCATION_ID"
+      - "PROVINCIAL_DENTAL_BOARD_OF_NOVA_SCOTIA"
+      - "COLLEGE_OF_DENTAL_HYGIENISTS_OF_NOVA_SCOTIA_REGISTRATION_NUMBER"
+      - "MIDWIFERY_REGULATORY_COUNCIL_OF_NOVA_SCOTIA"
+      - "COLLEGE_OF_MIDWIVES_OF_ONTARIO"
+      - "COLLEGE_OF_NURSES_OF_ONTARIO"
+      - "CANADA_ONTARIO_COLLEGE_OF_CHIROPODISTS_REGISTRATION_NUMBER"
+      - "ONTARIO_COLLEGE_OF_PHARMACISTS"
+      - "ROYAL_COLLEGE_OF_DENTAL_SURGEONS_OF_ONTARIO"
+      - "CANADA_ONTARIO_COLLEGE_OF_DENTAL_HYGIENISTS_LICENCE_NUMBER"
+      - "CANADA_ONTARIO_COLLEGE_OF_DIETITIANS_LICENCE_NUMBER"
+      - "COLLEGE_OF_PHYSICIANS_AND_SURGEONS_OF_MANITOBA_LICENSE_NUMBER"
+      - "ASSOCIATION_OF_REGISTERED_NURSES_OF_PRINCE_EDWARD_ISLAND"
+      - "COLLEGE_OF_DENTAL_SURGEONS_OF_BRITISH_COLUMBIA"
+      - "COLLEGE_OF_MIDWIVES_OF_BRITISH_COLUMBIA"
+      - "COLLEGE_OF_REGISTERED_NURSES_OF_BRITISH_COLUMBIA"
+      - "COLLEGE_OF_REGISTERED_NURSES_OF_MB"
+      - "DENTAL_COUNCIL_OF_PRINCE_EDWARD_ISLAND"
+      - "MANITOBA_DENTAL_ASSOCIATION"
+      - "COLLEGE_OF_DENTAL_HYGIENISTS_OF_BRITISH_COLUMBIA"
+      - "COLLEGE_OF_DENTAL_HYGIENISTS_OF_MANITOBA"
+      - "QUEBEC_DENTAL_HYGIENIST_LICENSE_NUMBER"
+      - "SASKATCHEWAN_DENTAL_HYGIENISTS_ASSOCIATION"
+      - "SASKATCHEWAN_DIETITIANS_ASSOCIATION"
+      - "COLLEGE_OF_DIETITIANS_OF_MB"
+      - "QUEBEC_DIETICIAN_LICENSE_NUMBER"
+      - "NEW_BRUNSWICK_ASSOCIATION_OF_DIETITIANS"
+      - "NOVA_SCOTIA_DIETETIC_ASSOCIATION"
+      - "PRINCE_EDWARD_ISLAND_DIETITIANS_REGISTRATION_BOARD"
+      - "NEWFOUNDLAND_AND_LABRADOR_COLLEGE_OF_DIETITIANS"
+      - "PRINCE_EDWARD_ISLAND_CANADA_COLLEGE_OF_PHYSICIANS_AND_SURGEONS_LICENSE_NUMBER_PEICPSLN"
+      - "PRINCE_EDWARD_ISLAND_CANADA_PHARMACY_BOARD_PHARMACIST_LICENSE_NUMBER"
+      - "PRINCE_EDWARD_ISLAND_CANADA_DEPARTMENT_OF_HEALTH_PHARMACY_IDENTIFIER"
+      - "COLLEGE_OF_REGISTERED_DENTAL_HYGIENISTS_OF_ALBERTA_LICENSE_NUMBER"
+      - "THE_NEWFOUNDLAND_LABRADOR_PHARMACY_BOARD"
+      - "COLLEGE_OF_PHYSICIANS_AND_SURGEONS_OF_NEWFOUNDLAND_AND_LABRADOR"
+      - "NEWFOUNDLAND_LABRADOR_DENTAL_BOARD"
+      - "NEWFOUNDLAD_AND_LABRADOR_COLLEGE_OF_OPTOMETRIST"
+      - "ASSOCIATION_OF_REGISTERED_NURSES_OF_NEWFOUNDLAND_AND_LABRADOR"
+      - "COLLEGE_OF_PHYSICIANS_AND_SURGEONS_OF_SASKATCHEWAN"
+      - "COLLEGE_OF_DENTAL_SURGEONS_OF_SASKATCHEWAN"
+      - "SASKATCHEWAN_REGISTERED_NURSES_ASSOCIATION"
+      - "SASKATCHEWAN_COLLEGE_OF_PHARMACISTS"
+      - "SASKATCHEWAN_ASSOCIATION_OF_OPTOMETRISTS"
+      - "QUEBEC_PHYSICIAN_LICENSE_NUMBER"
+      - "QUEBEC_PHARMACIST_PHARMACY_LICENSE_NUMBER"
+      - "QUEBEC_OPTOMETRIST_LICENSE_NUMBER"
+      - "QUEBEC_PODIATRISTS_LICENSE_NUMBER"
+      - "QUEBEC_MIDWIVE_LICENSE_NUMBER"
+      - "QUEBEC_DENTIST_LICENSE_NUMBER"
+      - "QUEBEC_NURSE_NURSE_PRACTITIONER_LICENSE_NUMBER"
+      - "SASKATCHEWAN_COLLEGE_OF_MIDWIVES"
+      - "COLLEGE_OF_MIDWIVES_OF_ALBERTA"
+      - "NS_CANADA_COLLEGE_OF_PHYSICIANS_AND_SURGEONS_REGISTRATION_NUMBER"
+      - "COLLEGE_OF_PHYSICIANS_AND_SURGEONS_OF_ONTARIO"
+      - "ALBERTA_COLLEGE_OF_OPTOMETRISTS"
+      - "ALBERTA_COLLEGE_OF_PHARMACISTS"
+      - "COLLEGE_OF_OPTOMETRISTS_OF_ONTARIO"
+      - "MANITOBA_ASSOCIATION_OF_OPTOMETRISTS"
+      - "PRINCE_EDWARD_ISLAND_ASSOCIATION_OF_OPTOMETRISTS"
+      - "NOVA_SCOTIA_COLLEGE_OF_OPTOMETRISTS"
+      - "COLLEGE_OF_PHYSICIANS_AND_SURGEONS_OF_ALBERTA"
+      - "COLLEGE_OF_OPTOMETRISTS_OF_BRITISH_COLUMBIA"
+      - "COLLEGE_OF_DIETICIANS_OF_ALBERTA_LICENSE_NUMBER"
+      - "COLLEGE_AND_ASSOCIATION_OF_REGISTERED_NURSES_OF_ALBERTA"
+      - "COLLEGE_OF_PODIATRIC_PHYSICIANS_OF_ALBERTA_CANADA_LICENSE_NUMBER"
+      - "BRITISH_COLUMBIA_CANADA_COLLEGE_OF_DIETITIANS_IDENTIFIER_FOR_REGISTERED_DIETITIAN"
+      - "BRITISH_COLUMBIA_CANADA_COLLEGE_OF_PHARMACISTS_IDENTIFIER_FOR_PHARMACIES"
+      - "COLLEGE_OF_PODIATRIC_SURGEONS_OF_BRITISH_COLUMBIA"
+      - "COLLEGE_OF_PHYSICIANS_AND_SURGEONS_OF_BRITISH_COLUMBIA"
+      - "COLLEGE_OF_PODIATRISTS_OF_MANITOBA"
+      - "SASKATCHEWAN_COLLEGE_OF_PODIATRISTS"
+      - "COLLEGE_OF_PHYSICIANS_AND_SURGEONS_OF_NEW_BRUNSWICK_DEPRECATED"
+    SharedPractitionerIdentifierTypeHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/SharedPractitionerIdentifierTypeEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/SharedPractitionerIdentifierType'
+
+    SharedPractitionerIdentifierType:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    SharedContactPointUseEnum:
+      type: string
+      enum:
+      - "HOME"
+      - "MOBILE"
+      - "WORK"
+    SharedContactPointUseHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/SharedContactPointUseEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/SharedContactPointUse'
+
+    SharedContactPointUse:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    SharedContactPointSystemEnum:
+      type: string
+      enum:
+      - "EMAIL"
+      - "FAX"
+      - "PHONE"
+    SharedContactPointSystemHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/SharedContactPointSystemEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/SharedContactPointSystem'
+
+    SharedContactPointSystem:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    AddressTypeEnum:
+      type: string
+      enum:
+      - "BOTH"
+      - "PHYSICAL"
+      - "POSTAL"
+    AddressTypeHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/AddressTypeEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/AddressType'
+
+    AddressType:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    SharedServiceStatusEnum:
+      type: string
+      enum:
+      - "ACTIVE"
+      - "IN_PROGRESS"
+      - "INACTIVE"
+    SharedServiceStatusHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/SharedServiceStatusEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/SharedServiceStatus'
+
+    SharedServiceStatus:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    ObservationValue:
+      type: object
+      properties:
+        value:
+          type: number
+        effectiveDateTime:
+          $ref: '#/components/schemas/DateTimeWithPrecision'
+      required: [value, effectiveDateTime]
+    Timing:
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/DateTimeWithPrecision'
+        repeat:
+          $ref: '#/components/schemas/Repeat'
+    PrescriptionAdministrationSiteEnum:
+      type: string
+      enum:
+      - "ABDOMEN"
+      - "BOTH_HANDS"
+      - "AFFECTED_AREA"
+      - "BOTH_ELBOWS"
+      - "BOTH_SHOULDERS"
+      - "FINGERNAILS"
+      - "LEFT_ELBOW"
+      - "RIGHT_ELBOW"
+      - "SCALP"
+      - "CHEST"
+      - "LEFT_ANKLE"
+      - "FOREHEAD"
+      - "BOTH_THIGHS"
+      - "BOTH_BREASTS"
+      - "RIGHT_FOREARM"
+      - "LEFT_FOREARM"
+      - "RIGHT_ANKLE"
+      - "BOTH_ARMS"
+      - "BOTH_ANKLES"
+      - "ALL_FINGERS"
+      - "RIGHT_BREAST"
+      - "EXTERNAL_GENITALIA_STRUCTURE"
+      - "HEAD_AND_NECK"
+      - "BACK"
+      - "LEFT_BREAST"
+      - "LIPS"
+      - "BOTH_FEET"
+      - "ALL_TOES"
+      - "FACE"
+      - "BOTH_FOREARMS"
+      - "RIGHT_SHOULDER"
+      - "LEFT_SHOULDER"
+      - "BE"
+      - "BN"
+      - "BU"
+      - "LA"
+      - "LE"
+      - "LF"
+      - "LH"
+      - "LN"
+      - "LT"
+      - "OD"
+      - "OS"
+      - "OU"
+      - "PA"
+      - "PERIN"
+      - "RA"
+      - "RE"
+      - "RF"
+      - "RH"
+      - "RN"
+      - "RT"
+    PrescriptionAdministrationSiteHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/PrescriptionAdministrationSiteEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/PrescriptionAdministrationSite'
+
+    PrescriptionAdministrationSite:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+      required: [displayEn]
+    PrescriptionRouteOfAdministrationEnum:
+      type: string
+      enum:
+      - "BUC"
+      - "DEN"
+      - "EPI"
+      - "IM"
+      - "IPINHL"
+      - "IV"
+      - "NASAL"
+      - "NASOGASINSTIL"
+      - "OPTHALTA"
+      - "OT"
+      - "PO"
+      - "PR"
+      - "SL"
+      - "SQ"
+      - "TOPICAL"
+      - "TRNSDERM"
+      - "TRNSLING"
+      - "VAGINS"
+    PrescriptionRouteOfAdministrationHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/PrescriptionRouteOfAdministrationEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/PrescriptionRouteOfAdministration'
+
+    PrescriptionRouteOfAdministration:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+      required: [displayEn]
+    DoseType:
+      type: object
+      properties:
+        type:
+          type: string
+      discriminator:
+        propertyName: type
+      required: [type]
+    Ratio:
+      type: object
+      properties:
+        amount:
+          $ref: '#/components/schemas/Quantity'
+        time:
+          $ref: '#/components/schemas/DurationValue'
+      required: [amount, time]
+    PrescriptionDosageInstructionLineRelationshipEnum:
+      type: string
+      enum:
+      - "AND"
+      - "THEN"
+    PrescriptionDosageInstructionLineRelationshipHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/PrescriptionDosageInstructionLineRelationshipEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/PrescriptionDosageInstructionLineRelationship'
+
+    PrescriptionDosageInstructionLineRelationship:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    FirstFillInstruction:
+      type: object
+      properties:
+        date:
+          $ref: '#/components/schemas/DateWithPrecision'
+        quantity:
+          $ref: '#/components/schemas/Quantity'
+        expectedSupplyDurationDays:
+          type: number
+          nullable: true
+    Quantity:
+      type: object
+      properties:
+        value:
+          type: number
+        unit:
+          $ref: '#/components/schemas/PrescribedQuantityUnitHolder'
+      required: [value, unit]
+    Period:
+      allOf:
+      - $ref: '#/components/schemas/RepeatType'
+      - type: object
+        properties:
+          startDate:
+            $ref: '#/components/schemas/DateTimeWithPrecision'
+          endDate:
+            $ref: '#/components/schemas/DateTimeWithPrecision'
+    MedicationPrescribeCoding:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        display:
+          type: string
+        isRepresentative:
+          type: boolean
+          nullable: true
+      required: [code, system, display]
+    PrescriptionDrugFormEnum:
+      type: string
+      enum:
+      - "LOLLIPOP"
+      - "GUMMY"
+      - "RECTAL_ROCKET"
+      - "ORAL_POWDER"
+      - "AER"
+      - "BAR"
+      - "BEAD"
+      - "BUCTAB"
+      - "CAP"
+      - "CAPLET"
+      - "CHEWTAB"
+      - "CRM"
+      - "CRYS"
+      - "DERMSPRY"
+      - "DISINTAB"
+      - "DISK"
+      - "DROP"
+      - "DRTAB"
+      - "ECTAB"
+      - "ELIXIR"
+      - "ENEMA"
+      - "ENTCAP"
+      - "ERCAP"
+      - "ERTAB"
+      - "FLAKE"
+      - "FOAM"
+      - "FOAMAPL"
+      - "GEL"
+      - "GELAPL"
+      - "GRAN"
+      - "IRSOL"
+      - "LTN"
+      - "MDINHL"
+      - "MDINHLPWD"
+      - "MEDPAD"
+      - "NASSPRY"
+      - "OIL"
+      - "OINT"
+      - "OINTAPL"
+      - "OPCRM"
+      - "OPDROP"
+      - "OPGEL"
+      - "OPOINT"
+      - "ORALSOL"
+      - "ORSUSP"
+      - "ORTROCHE"
+      - "OTCRM"
+      - "OTDROP"
+      - "OTGEL"
+      - "OTOINT"
+      - "PAD"
+      - "PASTE"
+      - "PATCH"
+      - "PELLET"
+      - "POWD"
+      - "PUD"
+      - "RECCRM"
+      - "RECFORM"
+      - "RECOINT"
+      - "RECSOL"
+      - "RECSUPP"
+      - "RINSE"
+      - "SHMP"
+      - "SLTAB"
+      - "SOL"
+      - "SPRY"
+      - "SPRYADAPT"
+      - "SUPP"
+      - "SUSP"
+      - "SWAB"
+      - "SYRUP"
+      - "TAB"
+      - "TINC"
+      - "TOPPWD"
+      - "TPATCH"
+      - "VAGCRM"
+      - "VAGSUPP"
+      - "VAGTAB"
+      - "WAFER"
+    PrescriptionDrugFormHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/PrescriptionDrugFormEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/PrescriptionDrugForm'
+
+    PrescriptionDrugForm:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+      required: [displayEn]
+    DetectedIssueCategoryEnum:
+      type: string
+      enum:
+      - "ALLDONE"
+      - "ALRTENDLATE"
+      - "ALRTSTRTLATE"
+      - "DACT"
+      - "DRG"
+      - "ENDLATE"
+      - "FOOD"
+      - "FULFIL"
+      - "HELD"
+      - "HISTORIC"
+      - "INTERVAL"
+      - "MINFREQ"
+      - "NHP"
+      - "NONRX"
+      - "NOTACTN"
+      - "NOTEQUIV"
+      - "NOTEQUIVGEN"
+      - "NOTEQUIVTHER"
+      - "PATPREF"
+      - "PATPREFALT"
+      - "PREVINEF"
+      - "STRTLATE"
+      - "TIME"
+      - "TIMING"
+      - "TOOLATE"
+      - "TOOSOON"
+      - "TPROD"
+    DetectedIssueCategoryHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/DetectedIssueCategoryEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/DetectedIssueCategory'
+
+    DetectedIssueCategory:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    DetectedIssueMitigationActionEnum:
+      type: string
+      enum:
+      - "THERAPY_APPROPRIATE"
+      - "PROVIDED_PATIENT_EDUCATION"
+      - "ADDED_CONCURRENT_THERAPY"
+      - "TEMPORARILY_SUSPENDED_CONCURRENT_THERAPY"
+      - "STOPPED_CONCURRENT_THERAPY"
+      - "SUPPLY_APPROPRIATE"
+      - "REPLACEMENT"
+      - "VACATION_SUPPLY"
+      - "WEEKEND_SUPPLY"
+      - "LEAVE_OF_ABSENCE"
+      - "CONSULTED_SUPPLIER"
+      - "ASSESSED_PATIENT"
+      - "ADDITIONAL_QUANTITY_ON_SEPARATE_DISPENSE"
+      - "AUTHORIZATION_CONFIRMED"
+      - "APPROPRIATE_INDICATION_OR_DIAGNOSIS"
+      - "PRIOR_THERAPY_DOCUMENTED"
+      - "PATIENT_EXPLANATION"
+      - "CONSULTED_OTHER_SOURCE"
+      - "CONSULTED_PRESCRIBER"
+      - "PRESCRIBER_DECLINED_CHANGE"
+      - "INTERACTING_THERAPY_NO_LONGER_ACTIVE_PLANNED"
+      - "OTHER_ACTION_TAKEN"
+      - "INSTITUTED_ONGOING_MONITORING_PROGRAM"
+      - "EMAUTH"
+      - "ACTADMINISTRATIVEDETECTEDISSUEMANAGEMENTCODE"
+      - "ACTDETECTEDISSUEMANAGEMENTCODE"
+      - "AUTHORIZATIONISSUEMANAGEMENTCODE"
+    DetectedIssueMitigationActionHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/DetectedIssueMitigationActionEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/DetectedIssueMitigationAction'
+
+    DetectedIssueMitigationAction:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+      required: [displayEn]
+    RenewResponseMedicationOrderApproved:
+      allOf:
+      - $ref: '#/components/schemas/RenewResponseMedicationOrderStatus'
+      - type: object
+    RenewResponseMedicationOrderApprovedWithChanges:
+      allOf:
+      - $ref: '#/components/schemas/RenewResponseMedicationOrderStatus'
+      - type: object
+        properties:
+          inputChangeValue:
+            type: string
+        required: [inputChangeValue]
+    RenewResponseMedicationOrderDenied:
+      allOf:
+      - $ref: '#/components/schemas/RenewResponseMedicationOrderStatus'
+      - type: object
+        properties:
+          rejectReason:
+            $ref: '#/components/schemas/PrescriptionRenewalRejectReasonHolder'
+          rejectReasonDescription:
+            type: string
+          newPrescriptionIdentifier:
+            type: array
+            items:
+              $ref: '#/components/schemas/NewRx'
+          nonClinicianPractitioner:
+            $ref: '#/components/schemas/NonClinicianPractitioner'
+          originalPrescriber:
+            $ref: '#/components/schemas/Practitioner'
+        required: [rejectReason, rejectReasonDescription, originalPrescriber]
+    RenewResponseMedicationOrderUnderReview:
+      allOf:
+      - $ref: '#/components/schemas/RenewResponseMedicationOrderStatus'
+      - type: object
+        properties:
+          reason:
+            $ref: '#/components/schemas/PrescriptionRenewalReviewReasonHolder'
+          reasonDescription:
+            type: string
+          nonClinicianPractitioner:
+            $ref: '#/components/schemas/NonClinicianPractitioner'
+          originalPrescriber:
+            $ref: '#/components/schemas/Practitioner'
+        required: [reason, reasonDescription, originalPrescriber]
+    MedicationCode:
+      type: object
+      properties:
+        code:
+          $ref: '#/components/schemas/MedicationCoding'
+        description:
+          type: string
+      required: [description]
+    PmsRxDispenseMedicationOrderDispenseRequestPmsRx:
+      type: object
+      properties:
+        dispenseIntervalDays:
+          type: number
+          nullable: true
+        quantity:
+          $ref: '#/components/schemas/Quantity'
+        expectedSupplyDurationDays:
+          type: number
+      required: [quantity, expectedSupplyDurationDays]
+    PrescriptionSplitReasonEnum:
+      type: string
+      enum:
+      - "BACKORDER"
+      - "NOTAVAILABLE"
+      - "NOTCOVERED"
+      - "OTHER"
+    PrescriptionSplitReasonHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/PrescriptionSplitReasonEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/PrescriptionSplitReason'
+
+    PrescriptionSplitReason:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+      required: [code, system]
+    DateWithPrecisionPrecision:
+      type: string
+      enum:
+      - YEAR
+      - YEAR_MONTH
+      - DATE
+    SharedPatientJurisdictionalHealthIdentifierTypeEnum:
+      type: string
+      enum:
+      - "NEW_BRUNSWICK_MEDICARE_NUMBER"
+      - "NOVA_SCOTIA_GLOBAL_IDENTIFIER_GID"
+      - "MANITOBA_HEALTH_PERSONAL_HEALTH_IDENTIFICATION_NUMBER_MHPHIN"
+      - "PRINCE_EDWARD_ISLAND_CANADA_PERSONAL_HEALTH_NUMBER"
+      - "ALBERTA_UNIQUE_LIFETIME_IDENTIFIER"
+      - "VETERANS_AFFAIRS_CANADA_HEALTH_NUMBER"
+      - "CORRECTIONAL_SERVICE_CANADA_HEALTH_NUMBER"
+      - "NON_INSURED_HEALTH_BENEFITS_HEALTH_NUMBER_NIHB"
+      - "ROYAL_CANADIAN_MOUNTED_POLICE_HEALTH_NUMBER"
+      - "CANADIAN_ARMED_FORCES_HEALTH_NUMBER"
+      - "BRITISH_COLUMBIA_PERSONAL_HEALTH_NUMBER"
+      - "NEW_BRUNSWICK_CANADA_PERSONAL_HEALTH_NUMBER"
+      - "NEWFOUNDLAND_AND_LABRADOR_CANADA_PERSONAL_HEALTH_NUMBER"
+      - "NOVA_SCOTIA_CANADA_PERSONAL_HEALTH_NUMBER"
+      - "NORTHWEST_TERRITORIES_CANADA_PERSONAL_HEALTH_NUMBER"
+      - "NUNAVUT_CANADA_PERSONAL_HEALTH_NUMBER"
+      - "QUEBEC_CANADA_PERSONAL_HEALTH_NUMBER"
+      - "SASKATCHEWAN_CANADA_PERSONAL_HEALTH_NUMBER"
+      - "YUKON_CANADA_PERSONAL_HEALTH_NUMBER"
+      - "ONTARIO_CANADA_PERSONAL_HEALTH_NUMBER"
+    SharedPatientJurisdictionalHealthIdentifierTypeHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/SharedPatientJurisdictionalHealthIdentifierTypeEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/SharedPatientJurisdictionalHealthIdentifierType'
+
+    SharedPatientJurisdictionalHealthIdentifierType:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    CancelMedicationOrderReferenceApproved:
+      allOf:
+      - $ref: '#/components/schemas/CancelMedicationOrderReferenceStatus'
+      - type: object
+        properties:
+          requestCancelReason:
+            $ref: '#/components/schemas/PrescriptionCancelReasonHolder'
+          isHighPriority:
+            type: boolean
+            nullable: true
+        required: [requestCancelReason]
+    CancelMedicationOrderReferenceDenied:
+      allOf:
+      - $ref: '#/components/schemas/CancelMedicationOrderReferenceStatus'
+      - type: object
+        properties:
+          cancelReason:
+            $ref: '#/components/schemas/PrescriptionCancelRejectReasonHolder'
+          cancelReasonDescription:
+            type: string
+          isHighPriority:
+            type: boolean
+        required: [cancelReason]
+    CancelMedicationOrderReferenceRevoked:
+      allOf:
+      - $ref: '#/components/schemas/CancelMedicationOrderReferenceStatus'
+      - type: object
+        properties:
+          requestCancelReason:
+            $ref: '#/components/schemas/PrescriptionCancelReasonHolder'
+          cancelReasonDescription:
+            type: string
+          isHighPriority:
+            type: boolean
+        required: [requestCancelReason]
+    Repeat:
+      type: object
+      properties:
+        bounds:
+          $ref: '#/components/schemas/RepeatType'
+        count:
+          type: integer
+          format: int32
+          nullable: true
+        maxCount:
+          type: integer
+          format: int32
+          nullable: true
+        duration:
+          $ref: '#/components/schemas/DurationValue'
+        maxDuration:
+          type: number
+          nullable: true
+        frequency:
+          type: integer
+          format: int32
+          nullable: true
+        maxFrequency:
+          type: integer
+          format: int32
+          nullable: true
+        period:
+          $ref: '#/components/schemas/DurationValue'
+        maxPeriod:
+          type: number
+          nullable: true
+    DoseQuantity:
+      allOf:
+      - $ref: '#/components/schemas/DoseType'
+      - type: object
+        properties:
+          value:
+            type: number
+          unit:
+            $ref: '#/components/schemas/PrescriptionDoseQuantityUnitHolder'
+        required: [value, unit]
+    Range:
+      allOf:
+      - $ref: '#/components/schemas/DoseType'
+      - type: object
+        properties:
+          low:
+            type: number
+          high:
+            type: number
+          unit:
+            $ref: '#/components/schemas/PrescriptionDoseQuantityUnitHolder'
+        required: [low, high, unit]
+    DurationValue:
+      allOf:
+      - $ref: '#/components/schemas/RepeatType'
+      - type: object
+        properties:
+          value:
+            type: number
+          unit:
+            $ref: '#/components/schemas/TimeUnit'
+        required: [value, unit]
+    PrescribedQuantityUnitEnum:
+      type: string
+      enum:
+      - "PERCENTAGE"
+      - "APPLICATOR"
+      - "STRIP"
+      - "PACKAGE"
+      - "STICK"
+      - "WAFER"
+      - "CANISTER"
+      - "BUCCAL_TABLET"
+      - "NEBULIZER"
+      - "INHALER"
+      - "LANCET"
+      - "CONTAINER"
+      - "DROP"
+      - "DOSE"
+      - "AMPULE"
+      - "APPLICATION"
+      - "PUFF"
+      - "SCOOP"
+      - "VIAL"
+      - "BOX"
+      - "TUBE"
+      - "KIT"
+      - "EACH"
+      - "BOTTLE"
+      - "SPRAY"
+      - "PATCH"
+      - "PACKET"
+      - "PAD"
+      - "SACHET"
+      - "DISK"
+      - "BAR"
+      - "IMPLANT"
+      - "INSERT"
+      - "PELLET"
+      - "CAPSULE"
+      - "BAG"
+      - "TABLET"
+      - "CAN"
+      - "LOZENGE"
+      - "SPONGE"
+      - "GUM"
+      - "SUPPOSITORY_IES"
+      - "PUMP"
+      - "PEN_NEEDLE"
+      - "DEVICE"
+      - "SYRINGE"
+      - "PASTILLE"
+      - "ENEMA"
+      - "TAMPON"
+      - "DRESSING"
+      - "CARTRIDGE"
+      - "RING"
+      - "PEN"
+      - "L"
+      - "U"
+      - "CUP_US"
+      - "FOZ_BR"
+      - "GAL_BR"
+      - "LB_AV"
+      - "OZ_AV"
+      - "PT_BR"
+      - "QT_BR"
+      - "SFT_I"
+      - "SIN_I"
+      - "SYD_I"
+      - "TBS_US"
+      - "TSP_US"
+      - "CM2"
+      - "CM3"
+      - "G"
+      - "IU"
+      - "KG"
+      - "M2"
+      - "ML"
+      - "MU"
+      - "MEQ"
+      - "MG"
+      - "MM2"
+      - "MM3"
+      - "MMOL"
+      - "MOL"
+      - "NL"
+      - "NG"
+      - "UL"
+      - "UG"
+      - "UMOL"
+    PrescribedQuantityUnitHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/PrescribedQuantityUnitEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/PrescribedQuantityUnit'
+
+    PrescribedQuantityUnit:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+      required: [displayEn]
+    RepeatType:
+      type: object
+      properties:
+        type:
+          type: string
+      discriminator:
+        propertyName: type
+      required: [type]
+    PrescriptionRenewalRejectReasonEnum:
+      type: string
+      enum:
+      - "CONTACTPRES"
+      - "FOLLOWPRES"
+      - "LABPSCP"
+      - "NOTPRESCPAT"
+      - "OTHERMFR"
+      - "PTMAKEAPMT"
+      - "REPLACED"
+      - "REQTOOEARLY"
+      - "RESPONDED"
+      - "STOPMED"
+      - "UNKNOWNPAT"
+    PrescriptionRenewalRejectReasonHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/PrescriptionRenewalRejectReasonEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/PrescriptionRenewalRejectReason'
+
+    PrescriptionRenewalRejectReason:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    NewRx:
+      type: object
+      properties:
+        identifier:
+          $ref: '#/components/schemas/Identifier'
+        drugName:
+          type: string
+      required: [identifier, drugName]
+    PrescriptionRenewalReviewReasonEnum:
+      type: string
+      enum:
+      - "LABREV"
+      - "OTHERMFR"
+      - "RESPTFOLLOWCMPT"
+      - "SEEPATIENT"
+    PrescriptionRenewalReviewReasonHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/PrescriptionRenewalReviewReasonEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/PrescriptionRenewalReviewReason'
+
+    PrescriptionRenewalReviewReason:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    PrescriptionCancelRejectReasonEnum:
+      type: string
+      enum:
+      - "FILLED"
+      - "TRANSFERRED"
+    PrescriptionCancelRejectReasonHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/PrescriptionCancelRejectReasonEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/PrescriptionCancelRejectReason'
+
+    PrescriptionCancelRejectReason:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+    PrescriptionDoseQuantityUnitEnum:
+      type: string
+      enum:
+      - "PERCENTAGE"
+      - "APPLICATORFUL"
+      - "STRIP"
+      - "PACKAGE"
+      - "STICK"
+      - "WAFER"
+      - "CANISTER"
+      - "BUCCAL_TABLET"
+      - "NEBULIZER"
+      - "LANCET"
+      - "DROP"
+      - "DOSE"
+      - "AMPULE"
+      - "APPLICATION"
+      - "PUFF"
+      - "SCOOP"
+      - "VIAL"
+      - "KIT"
+      - "EACH"
+      - "BOTTLE"
+      - "SPRAY"
+      - "PATCH"
+      - "PACKET"
+      - "PAD"
+      - "INHALATION"
+      - "SACHET"
+      - "IMPLANT"
+      - "INSERT"
+      - "PELLET"
+      - "CAPSULE"
+      - "TABLET"
+      - "CAN"
+      - "LOZENGE"
+      - "SPONGE"
+      - "GUM"
+      - "SUPPOSITORY_IES"
+      - "PUMP"
+      - "PEN_NEEDLE"
+      - "DEVICE"
+      - "SYRINGE"
+      - "PASTILLE"
+      - "ENEMA"
+      - "TAMPON"
+      - "DRESSING"
+      - "RING"
+      - "PEN"
+      - "L"
+      - "U"
+      - "CUP_US"
+      - "FOZ_BR"
+      - "GAL_BR"
+      - "IN_I"
+      - "LB_AV"
+      - "OZ_AV"
+      - "PT_BR"
+      - "QT_BR"
+      - "SFT_I"
+      - "SIN_I"
+      - "SYD_I"
+      - "TBS_US"
+      - "TSP_US"
+      - "CM"
+      - "CM2"
+      - "CM3"
+      - "G"
+      - "IU"
+      - "KG"
+      - "M2"
+      - "ML"
+      - "MU"
+      - "MEQ"
+      - "MG"
+      - "MM2"
+      - "MM3"
+      - "MMOL"
+      - "MOL"
+      - "NL"
+      - "NG"
+      - "UL"
+      - "UG"
+      - "UMOL"
+    PrescriptionDoseQuantityUnitHolder:
+      type: object
+      properties:
+        exactCode:
+          $ref: '#/components/schemas/PrescriptionDoseQuantityUnitEnum'
+        overriddenBinding:
+          $ref: '#/components/schemas/PrescriptionDoseQuantityUnit'
+
+    PrescriptionDoseQuantityUnit:
+      type: object
+      properties:
+        code:
+          type: string
+        system:
+          type: string
+        displayEn:
+          type: string
+        displayFr:
+          type: string
+      required: [displayEn]
+    TimeUnit:
+      type: string
+      enum:
+      - SECOND
+      - MINUTE
+      - HOUR
+      - DAY
+      - WEEK
+      - MONTH
+      - YEAR
+    DurationRange:
+      allOf:
+      - $ref: '#/components/schemas/RepeatType'
+      - type: object
+        properties:
+          low:
+            type: number
+            nullable: true
+          high:
+            type: number
+            nullable: true
+          unit:
+            $ref: '#/components/schemas/TimeUnit'
+        required: [unit]
+    SubmissionBody: 
+      type: object
+      properties: 
+        message: 
+          type: string
+        type: 
+          type: string
+    InboxMessageResponse: 
+      type: object
+      properties: 
+        messages: 
+          type: array
+          items:
+            $ref: '#/components/schemas/BaseBundle'
+        detectedValidationErrors:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+        failedMessages:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+    TransportResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+        responseBody:
+          type: string
+    RequestOtpParameters:
+      type: object
+      properties:
+        practitionerId:
+          type: string
+        organizationId:
+          type: string
+    RequestSamlTokenParameters:
+      type: object
+      properties:
+        practitioner:
+          $ref: '#/components/schemas/PractitionerToAuthenticate'
+        organizationId:
+          type: string
+        otp:
+          type: string
+
+    FormularyRequestParameters:
+      type: object
+      properties:
+        query:
+          $ref: '#/components/schemas/EmrFormularyRequestQuery'
+        practitionerId:
+          type: string
+        organizationId:
+          type: string
+    EmrRegistrySearchOrganizationByIdQueryParameters:
+      type: object
+      properties:
+        query:
+          $ref: '#/components/schemas/OrganizationIdSearchParameters'
+        practitionerId:
+          type: string
+    EmrRegistrySearchOrganizationDiscreteQueryParameters:
+      type: object
+      properties:
+        query:
+          $ref: '#/components/schemas/OrganizationSearchParameters'
+        practitionerId:
+          type: string
+    EmrRegistrySearchOrganizationElasticQueryParameters:
+      type: object
+      properties:
+        query:
+          $ref: '#/components/schemas/OrganizationElasticSearchParameters'
+        practitionerId:
+          type: string
+    EmrRegistrySearchPractitionerByIdQueryParameters:
+      type: object
+      properties:
+        query:
+          $ref: '#/components/schemas/PractitionerIdSearchParameters'
+        practitionerId:
+          type: string
+    EmrRegistrySearchPractitionerDiscreteQueryParameters:
+      type: object
+      properties:
+        query:
+          $ref: '#/components/schemas/PractitionerSearchParameters'
+        practitionerId:
+          type: string
+    EmrRegistrySearchPractitionerElasticQueryParameters:
+      type: object
+      properties:
+        query:
+          $ref: '#/components/schemas/PractitionerElasticSearchParameters'
+        practitionerId:
+          type: string
+    PmsDeferredQueryParameters:
+      type: object
+      properties:
+        query:
+          $ref: '#/components/schemas/PmsDeferredPrescriptionQuery'
+        organizationId:
+          type: string
+    AcknowledgeDeferredParameters:
+      type: object
+      properties:
+        bundleXml:
+          type: string
+        organizationId:
+          type: string
+            
